@@ -13,21 +13,14 @@
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<link rel="shortcut icon" href="images/icon.ico">
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-
-		
-
-
-		 <!-- //ga('create', 'UA-55022069-1', 'auto'); -->
-
-<!-- End Google Analytics -->
+	
 	</head>
 	<body>   
 		<div >
 			
 			<form name="test" action="JavaScript:getSyn()">
 			  <p><b>Введите слова через пробел</b><br>
-			   <input type="text" size="40">
+			   <input id="words" type="text" size="40">
 			  </p>
 			  <p><input type="submit" value="Жми">
 			   <input type="reset" value="Очистить"></p>
@@ -50,7 +43,8 @@
 			['Дерево','ящик','ку','морда']
 			];
 
-			var slova = ['в','ку'];
+
+			var slova = $("#words").val().split(' ');
 			//индексы строчек, в которых можно найти синонимы.
 			var indexRow = []; 
 			$.each(slova, function (index, value) {
